@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+    <title>js ecom website</title>
+  </head>
+  <body>
+    <header class="section-navbar">
+      <section class="top_txt">
+        <div class="head container">
+          <div class="head_txt">
+            <p>From the Heart of Farms to Your Home !</p>
+          </div>
+          <div class="sing_in_up">
+            <a href="# ">SIGN IN</a>
+            <a href="# ">SIGN UP</a>
+          </div>
+        </div>
+      </section>
+      <div class="container">
+        <div class="navbar-brand">
+          <a href="index.html">
+            <img
+              src="./public/images/log.png"
+              alt="FARMERS MARKETPLACE"
+              class="logo"
+              width="80%"
+              height="auto"
+            />
+          </a>
+        </div>
+
+        <nav class="navbar">
+          <ul>
+            <li class="nav-item">
+              <a href="/" class="nav-link">Home</a>
+            </li>
+            <li class="nav-item">
+              <a href="about.html" class="nav-link">about</a>
+            </li>
+            <li class="nav-item">
+              <a href="products.html" class="nav-link">products</a>
+            </li>
+            <li class="nav-item">
+              <a href="contact.html" class="nav-link">contact</a>
+            </li>
+            <li class="nav-item">
+              <a
+                href="addToCart.html"
+                class="nav-link add-to-cart-button"
+                id="cartValue"
+              >
+                <i class="fa-solid fa-cart-shopping"> 0 </i>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+   <!-- ========== Start Extra Product Section ========== -->
+   <section class="section-extra-product">
+    <div class="container grid grid-three--cols">
+      <div class="div-extra grid grid-two--cols">
+        <div class="extra-text">
+          <p>sessional sale</p>
+          <h3>get and extra 20% off on bulk</h3>
+          <a href="#">Shop now</a>
+        </div>
+        <div class="extra-img extra-laptop">
+          <img src="public/images/laptop.png" alt="" />
+        </div>
+      </div>
+
+      <div class="div-extra grid grid-two--cols">
+        <div class="extra-text">
+          <p>sessional sale</p>
+          <h3>15% discount on BASMATI rice</h3>
+          <a href="#">Shop now</a>
+        </div>
+        <div class="extra-img">
+          <img src="public/images/headphone.png" alt="" />
+        </div>
+      </div>
+
+      <div class="div-extra grid grid-two--cols">
+        <div class="extra-text">
+          <p>sessional sale</p>
+          <h3>get and extra 25% off on 2 kg grapes</h3>
+          <a href="#">Shop now</a>
+        </div>
+        <div class="extra-img">
+          <img src="public/images/mobiles.png" alt="" />
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ========== End Extra Product Section ========== -->
+
+     <!-- ========== Start policy ========== -->
+     <section class="section-policy">
+      <div class="container grid grid-four--cols">
+        <div class="div-policy">
+          <div class="icons">
+            <i class="fa-solid fa-truck-fast"></i>
+          </div>
+          <div class="div-policy-text">
+            <p>timely delivery</p>
+            <p>guaranteed</p>
+          </div>
+        </div>
+
+        <div class="div-policy">
+          <div class="icons">
+            <i class="fa-solid fa-rotate"></i>
+          </div>
+          <div class="div-policy-text">
+            <p>30-Day Returns on Seeds and Perishable Goods</p>
+            <p>Back Returns in 7 Days</p>
+          </div>
+        </div>
+
+        <div class="div-policy">
+          <div class="icons">
+            <i class="fa-solid fa-hand-holding-dollar"></i>
+          </div>
+          <div class="div-policy-text">
+            <p>money back guarantee</p>
+            <p>guarantee with in 30-Days</p>
+          </div>
+        </div>
+
+        <div class="div-policy">
+          <div class="icons">
+            <i class="fa-solid fa-headset"></i>
+          </div>
+          <div class="div-policy-text">
+            <p>Easy Online Support</p>
+            <p>24/7 Any time support</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ========== End policy ========== -->
+
+    <!-- ========== Start Our Products Section ========== -->
+
+    <section class="section-products container">
+      <div class="">
+        <h2 class="section-common--heading">Checkout farmers marketplace</h2>
+      </div>
+
+      <section class="container">
+        <div id="productContainer"></div>
+      </section>
+    </section>
+
+    <!-- ========== Start Product Template Section ========== -->
+     
+    <!DOCTYPE html>
+    <html lang="en">
+      <!DOCTYPE html>
+      <html lang="en">
+      <head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <title>Product List</title>
+          <style>
+              body {
+                  font-family: Arial, sans-serif;
+                  margin: 0;
+                  padding: 0;
+                  background-color: #f9f9f9;
+              }
+              .container {
+                  width: 90%;
+                  margin: 20px auto;
+                  display: grid;
+                  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+                  gap: 20px;
+              }
+              .product {
+                  border: 1px solid #ddd;
+                  border-radius: 5px;
+                  padding: 10px;
+                  display: flex;
+                  flex-direction: column;
+                  align-items: center;
+                  background-color: #fff;
+                  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+              }
+              .product img {
+                  max-width: 100%;
+                  height: auto;
+                  margin-bottom: 10px;
+                  border-radius: 5px;
+              }
+              .productName {
+                  font-size: 18px;
+                  font-weight: bold;
+              }
+              .category, .productPrice, .productStock, .productDescription {
+                  margin: 5px 0;
+              }
+              .productRating {
+                  margin: 10px 0;
+                  color: #f39c12;
+              }
+              .productPriceElement {
+                  text-align: center;
+                  font-size: 16px;
+                  margin: 5px 0;
+              }
+              .productStockElement, .productQuantityElement {
+                  margin: 10px 0;
+              }
+              .stockElement {
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+              }
+              .stockElement button {
+                  background-color: #ffffff;
+                  color: rgb(0, 0, 0);
+                  border: none;
+                  padding: 5px 10px;
+                  border-radius: 5px;
+                  cursor: pointer;
+                  margin: 0 5px;
+              }
+              .add-to-cart-button {
+                  margin-top: 10px;
+                  padding: 10px 20px;
+                  font-size: 14px;
+                  background-color: #000000;
+                  color: white;
+                  border: none;
+                  border-radius: 5px;
+                  cursor: pointer;
+                  transition: background-color 0.3s ease;
+              }
+              .add-to-cart-button:hover {
+                  background-color: #000000;
+              }
+          </style>
+      </head>
+      <body>
+        <div class="container">
+            <!-- Product 1 -->
+    
+            <section id="productTemplate">
+              <div class="product" id="cardValue">
+                <article class="information [card]">
+                  <span class="category">veggies</span>
+                  <div class="imageContainer">
+                    <img class="productImage" src="public/images/iphone.png" alt="onion" />
+                  </div>
+                  <h2 class="productName">onion</h2>
+        
+                  <div class="productRating">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                  </div>
+        
+                  <p class="productDescription">Fresh and flavorful onions, 
+                    perfect for enhancing the taste of your favorite dishes.
+                     Direct from local farms, guaranteeing quality and freshness.</p>
+        
+                  <div class="productPriceElement">
+                    <p class="productActualPrice">₹30/kg</p>
+                    <p class="productPrice">₹25/kg</p>
+                    
+                  </div>
+        
+                  <div class="productStockElement">
+                    <p class="productProperty">Total quantity Available: 500 kg</p>
+                    <p class="productStock"></p>
+                  </div>
+        
+                  <div class="productQuantityElement">
+                    <p class="productProperty">Quantity(Pieces)</p>
+                    <div class="stockElement">
+                      <button class="cartIncrement">+</button>
+                      <p class="productQuantity">1</p>
+                      <button class="cartDecrement">-</button>
+                    </div>
+                  </div>
+        
+                  <button class="add-to-cart-button">
+                    <i class="fa-solid fa-cart-shopping"></i> Add To Cart
+                  </button>
+                </article>
+              </div>
+            </section>
+    
+            <!-- Product 2 -->
+            <section id="productTemplate">
+              <div class="product" id="cardValue">
+                <article class="information [card]">
+                  <span class="category">fruits</span>
+                  <div class="imageContainer">
+                    <img class="productImage" src="public/images/mobiles.png" alt="onion" />
+                  </div>
+                  <h2 class="productName">grapes</h2>
+        
+                  <div class="productRating">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                  </div>
+        
+                  <p class="productDescription">Juicy and sweet seedless grapes,
+                     handpicked for their superior quality.
+                     A perfect snack for your family or an addition to your desserts. </p>
+        
+                  <div class="productPriceElement">
+                    <p class="productActualPrice">₹100/kg</p>
+                    <p class="productPrice">₹85/kg</p>
+                    
+                  </div>
+        
+                  <div class="productStockElement">
+                    <p class="productProperty">Total quantity Available: 300 kg</p>
+                    <p class="productStock"></p>
+                  </div>
+        
+                  <div class="productQuantityElement">
+                    <p class="productProperty">Quantity(Pieces)</p>
+                    <div class="stockElement">
+                      <button class="cartIncrement">+</button>
+                      <p class="productQuantity">1</p>
+                      <button class="cartDecrement">-</button>
+                    </div>
+                  </div>
+        
+                  <button class="add-to-cart-button">
+                    <i class="fa-solid fa-cart-shopping"></i> Add To Cart
+                  </button>
+                </article>
+              </div>
+            </section>
+    
+            <!-- Product 3 -->
+            <section id="productTemplate">
+              <div class="product" id="cardValue">
+                <article class="information [card]">
+                  <span class="category">Dry Fruits/Seeds</span>
+                  <div class="imageContainer">
+                    <img class="productImage" src="public/images/watch.png" alt="onion" />
+                  </div>
+                  <h2 class="productName">nuts</h2>
+        
+                  <div class="productRating">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                  </div>
+        
+                  <p class="productDescription">Crunchy and nutritious nuts, 
+                    packed with natural goodness.
+                     Ideal for snacking or adding to your favorite recipes.</p>
+        
+                  <div class="productPriceElement">
+                    <p class="productActualPrice">₹150/kg</p>
+                    <p class="productPrice">₹140/kg</p>
+                    
+                  </div>
+        
+                  <div class="productStockElement">
+                    <p class="productProperty">Total quantity Available: 200 kg</p>
+                    <p class="productStock"></p>
+                  </div>
+        
+                  <div class="productQuantityElement">
+                    <p class="productProperty">Quantity(Pieces)</p>
+                    <div class="stockElement">
+                      <button class="cartIncrement">+</button>
+                      <p class="productQuantity">1</p>
+                      <button class="cartDecrement">-</button>
+                    </div>
+                  </div>
+        
+                  <button class="add-to-cart-button">
+                    <i class="fa-solid fa-cart-shopping"></i> Add To Cart
+                  </button>
+                </article>
+              </div>
+            </section>
+            <!-- Product 4 -->
+            <section id="productTemplate">
+              <div class="product" id="cardValue">
+                <article class="information [card]">
+                  <span class="category">Cereals</span>
+                  <div class="imageContainer">
+                    <img class="productImage" src="public/images/speakers.png" alt="onion" />
+                  </div>
+                  <h2 class="productName">corn</h2>
+        
+                  <div class="productRating">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                  </div>
+        
+                  <p class="productDescription">Golden, sweet corn straight from the fields, 
+                    perfect for boiling, roasting, or adding to your salads.</p>
+        
+                  <div class="productPriceElement">
+                    <p class="productActualPrice">₹40/kg</p>
+                    <p class="productPrice">₹35/kg</p>
+                    
+                  </div>
+        
+                  <div class="productStockElement">
+                    <p class="productProperty">Total quantity Available: 700 kg</p>
+                    <p class="productStock"></p>
+                  </div>
+        
+                  <div class="productQuantityElement">
+                    <p class="productProperty">Quantity(Pieces)</p>
+                    <div class="stockElement">
+                      <button class="cartIncrement">+</button>
+                      <p class="productQuantity">1</p>
+                      <button class="cartDecrement">-</button>
+                    </div>
+                  </div>
+        
+                  <button class="add-to-cart-button">
+                    <i class="fa-solid fa-cart-shopping"></i> Add To Cart
+                  </button>
+                </article>
+              </div>
+            </section>
+    
+            <!-- Product 5 -->
+            <section id="productTemplate">
+              <div class="product" id="cardValue">
+                <article class="information [card]">
+                  <span class="category">Cash Crops</span>
+                  <div class="imageContainer">
+                    <img class="productImage" src="public/images/laptop.png" alt="onion" />
+                  </div>
+                  <h2 class="productName">sugarcane</h2>
+        
+                  <div class="productRating">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                  </div>
+        
+                  <p class="productDescription">Naturally sweet and juicy sugarcane, 
+                    freshly harvested to quench your thirst and boost your energy.</p>
+        
+                  <div class="productPriceElement">
+                    <p class="productActualPrice">₹20/stick</p>
+                    <p class="productPrice">₹18/stick</p>
+                    
+                  </div>
+        
+                  <div class="productStockElement">
+                    <p class="productProperty">Total quantity Available: 1,000 sticks </p>
+                    <p class="productStock"></p>
+                  </div>
+        
+                  <div class="productQuantityElement">
+                    <p class="productProperty">Quantity(Pieces)</p>
+                    <div class="stockElement">
+                      <button class="cartIncrement">+</button>
+                      <p class="productQuantity">1</p>
+                      <button class="cartDecrement">-</button>
+                    </div>
+                  </div>
+        
+                  <button class="add-to-cart-button">
+                    <i class="fa-solid fa-cart-shopping"></i> Add To Cart
+                  </button>
+                </article>
+              </div>
+            </section>
+    
+            <!-- Product 6 -->
+            <section id="productTemplate">
+              <div class="product" id="cardValue">
+                <article class="information [card]">
+                  <span class="category">dairy product</span>
+                  <div class="imageContainer">
+                    <img class="productImage" src="public/images/tv.png" alt="onion" />
+                  </div>
+                  <h2 class="productName">Ghee</h2>
+        
+                  <div class="productRating">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                  </div>
+        
+                  <p class="productDescription">Rich and aromatic homemade ghee, crafted with love and care.
+                     A perfect addition to your meals for that authentic taste.</p>
+        
+                  <div class="productPriceElement">
+                    <p class="productActualPrice">₹600/kg</p>
+                    <p class="productPrice">₹550/kg</p>
+                    
+                  </div>
+        
+                  <div class="productStockElement">
+                    <p class="productProperty">Total quantity Available: 50kg</p>
+                    <p class="productStock"></p>
+                  </div>
+        
+                  <div class="productQuantityElement">
+                    <p class="productProperty">Quantity(Pieces)</p>
+                    <div class="stockElement">
+                      <button class="cartIncrement">+</button>
+                      <p class="productQuantity">1</p>
+                      <button class="cartDecrement">-</button>
+                    </div>
+                  </div>
+        
+                  <button class="add-to-cart-button">
+                    <i class="fa-solid fa-cart-shopping"></i> Add To Cart
+                  </button>
+                </article>
+              </div>
+            </section>
+
+             <!-- Product 5 -->
+             <section id="productTemplate">
+              <div class="product" id="cardValue">
+                <article class="information [card]">
+                  <span class="category"> Grains</span>
+                  <div class="imageContainer">
+                    <img class="productImage" src="public/images/headphone.png" alt="onion" />
+                  </div>
+                  <h2 class="productName">Rice</h2>
+        
+                  <div class="productRating">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                  </div>
+        
+                  <p class="productDescription">Premium quality rice, naturally grown and aged for perfect texture and flavor.
+                     Ideal for biryanis, curries, or daily meals.</p>
+        
+                  <div class="productPriceElement">
+                    <p class="productActualPrice"> ₹50/kg</p>
+                    <p class="productPrice"> ₹45/kg</p>
+                    
+                  </div>
+        
+                  <div class="productStockElement">
+                    <p class="productProperty">Total quantity Available:1,500 kg</p>
+                    <p class="productStock"></p>
+                  </div>
+        
+                  <div class="productQuantityElement">
+                    <p class="productProperty">Quantity(Pieces)</p>
+                    <div class="stockElement">
+                      <button class="cartIncrement">+</button>
+                      <p class="productQuantity">1</p>
+                      <button class="cartDecrement">-</button>
+                    </div>
+                  </div>
+        
+                  <button class="add-to-cart-button">
+                    <i class="fa-solid fa-cart-shopping"></i> Add To Cart
+                  </button>
+                </article>
+              </div>
+            </section>
+
+             <!-- Product 5 -->
+             <section id="productTemplate">
+              <div class="product" id="cardValue">
+                <article class="information [card]">
+                  <span class="category">Fruits</span>
+                  <div class="imageContainer">
+                    <img class="productImage" src="public/images/headphoneEcom.png" alt="onion" />
+                  </div>
+                  <h2 class="productName">Pomegranate</h2>
+        
+                  <div class="productRating">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                  </div>
+        
+                  <p class="productDescription">Bright and ruby-red pomegranates, bursting with sweet and tangy flavors.
+                     A healthy choice for your immunity and skin.</p>
+        
+                  <div class="productPriceElement">
+                    <p class="productActualPrice">₹150/kg</p>
+                    <p class="productPrice">₹130/kg</p>
+                    
+                  </div>
+        
+                  <div class="productStockElement">
+                    <p class="productProperty">Total quantity Available: 400 kg </p>
+                    <p class="productStock"></p>
+                  </div>
+        
+                  <div class="productQuantityElement">
+                    <p class="productProperty">Quantity(Pieces)</p>
+                    <div class="stockElement">
+                      <button class="cartIncrement">+</button>
+                      <p class="productQuantity">1</p>
+                      <button class="cartDecrement">-</button>
+                    </div>
+                  </div>
+        
+                  <button class="add-to-cart-button">
+                    <i class="fa-solid fa-cart-shopping"></i> Add To Cart
+                  </button>
+                </article>
+              </div>
+            </section>
+        </div>
+    </body>
+    </html>
+
+    <!-- ========== End Product Template Section ========== -->
+
+    <!-- ========== End Our Products Section ========== -->
+
+    <!--* ========== Start Footer Section ========== -->
+
+    <footer class="section-footer">
+      <script src="footer.js"></script>
+    </footer>
+    <!-- Include the footer JavaScript file -->
+
+    <!--* ========== End Footer Section ========== -->
+
+    <script type="module" src="main.js"></script>
+  </body>
+</html>
